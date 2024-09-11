@@ -35,7 +35,9 @@ const MapComponent = () => {
   const fetchVehicleData = async (selectedDay) => {
     try {
       setIsDataLoaded(false); // Set to false before fetching data
-      const response = await axios.get(`http://localhost:5000/api/location?day=${selectedDay}`);
+    //   const response = await axios.get(`http://localhost:5000/api/location?day=${selectedDay}`);
+      const response = await axios.get(`https://backendtichtechcmytask.onrender.com/api/location?day=${selectedDay}`);
+
       const data = response.data;
       setCarData(data);
       if (data.length > 0) {
